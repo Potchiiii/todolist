@@ -1,0 +1,106 @@
+:root {
+  --primary-color: #646cff;
+  --primary-hover: #535bf2;
+  --danger-color: #ff6b6b;
+  --danger-hover: #ff4c4c;
+  --bg-color: #f7f7f7;
+  --text-color: #333;
+  --border-color: #ddd;
+  --radius: 6px;
+  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.App {
+  max-width: 600px;
+  width: 100%;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 1.5rem;
+}
+
+input {
+  padding: 0.75rem;
+  margin-right: 0.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  font-size: 1rem;
+  width: calc(100% - 120px);
+  max-width: 400px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+input:focus {
+  border-color: var(--primary-color);
+}
+
+button {
+  padding: 0.75rem 1.25rem;
+  border: none;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+  background-color: var(--primary-hover);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 2rem;
+}
+
+li {
+  background: #fafafa;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.2s;
+}
+
+li.done {
+  opacity: 0.6;
+  text-decoration: line-through;
+}
+
+li button {
+  background-color: var(--danger-color);
+  margin-left: 0.5rem;
+  padding: 0.5rem 0.75rem;
+}
+
+li button:hover {
+  background-color: var(--danger-hover);
+}
