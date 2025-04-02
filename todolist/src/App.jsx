@@ -15,13 +15,20 @@ function App() {
 
   const removeTask = (index) => {
     setTasks(tasks.filter((_, i) => i !== index));
-    // Remove from done tasks if needed
     setDoneTasks(doneTasks.filter(i => i !== index));
   };
 
   const markAsDone = (index) => {
     if (!doneTasks.includes(index)) {
       setDoneTasks([...doneTasks, index]);
+    }
+  };
+
+  const editTask = (index) => {
+    const newTask = prompt("Edit task:", tasks[index]);
+    if (newTask !== null && newTask.trim() !== "") {
+      const updatedTasks = tasks.map((t, i) => (i === index ? newTask : t));
+      setTasks(updatedTasks);
     }
   };
 
@@ -43,6 +50,7 @@ function App() {
             <span>{t}</span>
             <div>
               <button onClick={() => markAsDone(index)}>Done</button>
+              <button onClick={() => editTask(index)}>Edit</button>
               <button onClick={() => removeTask(index)}>Remove</button>
             </div>
           </li>
